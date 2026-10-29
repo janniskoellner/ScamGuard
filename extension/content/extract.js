@@ -18,6 +18,11 @@
   // Inseratsfotos liegen auf dem Bild-Server unter /prod-ads/images/ (Avatare, Banner nicht)
   const AD_IMAGE = /^https:\/\/img\.kleinanzeigen\.de\/api\/v1\/prod-ads\/images\//;
 
+  // Demo-Inserate für Vorführungen (demo/server.py) – lokal, Bilder dort per http
+  const DEMO_HOST = /^kleinanzeigen\.localhost$/;
+  const imageUrlOk = (url) =>
+    url.startsWith("https://") || (DEMO_HOST.test(location.hostname) && url.startsWith(location.origin + "/"));
+
   // Rechtsform am Ende eines Anbieter-/Firmennamens (gleiche Liste wie schema.LEGAL_FORM im Server)
   const LEGAL_FORM =
     /(?<![\w.])(GmbH\s*&\s*Co\.?\s*KG|gGmbH|GmbH|UG(?:\s*\(haftungsbeschränkt\))?|AG|SE|KGaA|KG|OHG|GbR|PartG(?:mbB)?|eG|e\.\s?K\.|e\.\s?Kfm\.|e\.\s?V\.|Ltd\.?|Inc\.?|LLC|S\.?à\s?r\.?l\.?)\s*$/;
@@ -40,7 +45,8 @@
   const kleinanzeigen = {
     name: "kleinanzeigen",
     matches: () =>
-      /(^|\.)kleinanzeigen\.de$/.test(location.hostname) && location.pathname.startsWith("/s-anzeige/"),
+      (/(^|\.)kleinanzeigen\.de$/.test(location.hostname) || DEMO_HOST.test(location.hostname)) &&
+      location.pathname.startsWith("/s-anzeige/"),
 
     extract() {
       const $ = (sel) => document.querySelector(sel);
@@ -96,7 +102,7 @@
         if (!gallery.length && !AD_IMAGE.test(raw)) continue; // neues Layout: nur Inseratsfotos
         const url = raw.replace(/(rule=\$_\d+)\.AUTO\b/, "$1.JPG");
         const key = url.split("?")[0];
-        if (!url.startsWith("https://") || seen.has(key)) continue;
+        if (!imageUrlOk(url) || seen.has(key)) continue;
         seen.add(key);
         images.push({ el: img, url });
       }

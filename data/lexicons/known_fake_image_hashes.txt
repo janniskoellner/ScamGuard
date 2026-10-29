@@ -1,3 +1,5 @@
 # Perceptual Hashes (pHash, 64 bit hex) von bekannten Fake-/Stockfotos – eine pro Zeile.
 # Erzeugen mit:  scamguard images hash pfad/zum/bild.jpg
 # Kommentare mit # sind erlaubt.
+# Demo-Foto der PS5 aus demo/server.py (Vorführung „bekanntes Betrugsbild“)
+e699999999269966

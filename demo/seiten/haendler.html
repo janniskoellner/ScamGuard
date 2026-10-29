@@ -1,0 +1,76 @@
+<!doctype html>
+<!-- Demo-Inserat eines gewerblichen Anbieters (frei erfunden) mit den Element-IDs der
+     Kleinanzeigen-Anzeigenseite. {{ACTIVE_SINCE}} setzt demo/server.py. -->
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>4x Winterräder 17 Zoll Alufelgen in Mannheim</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="kopf">
+    <div class="kopf-innen">
+      <div class="logo">klein<span>anzeigen</span></div>
+      <span class="demo-hinweis">Demo</span>
+      <div class="suche">Wonach suchst du?</div>
+      <nav class="kopf-links"><span>Nachrichten</span><span>Meine Anzeigen</span><span class="knopf-anzeige">Anzeige aufgeben</span></nav>
+    </div>
+  </header>
+
+  <div class="seite">
+    <div class="inhalt">
+      <div id="vap-brdcrmb">
+        <span itemprop="itemListElement"><a href="/"><span itemprop="name">Kleinanzeigen</span></a></span>
+        <span itemprop="itemListElement"><a href="/"><span itemprop="name">Auto, Rad &amp; Boot</span></a></span>
+        <span itemprop="itemListElement"><a href="/"><span itemprop="name">Autoteile &amp; Reifen</span></a></span>
+      </div>
+
+      <div id="viewad-main">
+        <article id="viewad-product" class="karte">
+          <div class="galerie-gross galleryimage-element">
+            <img id="viewad-image" alt="Winterräder" src="/bilder/raeder-1.jpg">
+          </div>
+          <div class="galerie-leiste">
+            <div class="galleryimage-element"><img alt="" src="/bilder/raeder-1.jpg"></div>
+            <div class="galleryimage-element"><img alt="" src="/bilder/raeder-2.jpg"></div>
+            <div class="galleryimage-element"><img alt="" src="/bilder/raeder-3.jpg"></div>
+          </div>
+        </article>
+
+        <div id="viewad-main-info" class="karte">
+          <h1 id="viewad-title">4x Winterräder 17 Zoll Alufelgen</h1>
+          <h2 id="viewad-price">399 €</h2>
+          <div class="details"><span id="viewad-locality">68159 Mannheim</span><span>Gestern, 16:40</span></div>
+          <div class="versand">Abholung oder Montage vor Ort</div>
+        </div>
+
+        <div id="viewad-profile-box" class="karte">
+          <div id="viewad-bizteaser"><a href="/"><span>Muster Autoteile GmbH</span></a></div>
+          <div id="viewad-contact" class="anbieter">
+            <div class="avatar">MA</div>
+            <div class="anbieter-zeilen">
+              <a class="anbieter-name" href="/">Muster Autoteile</a>
+              <div class="abzeichen"><a href="/">TOP Zufriedenheit</a><a href="/">Besonders zuverlässig</a></div>
+              <span>Gewerblicher Nutzer</span>
+              <span>Aktiv seit {{ACTIVE_SINCE}}</span>
+            </div>
+            <div class="anbieter-aktionen"><button class="primaer">Nachricht schreiben</button><button>Anrufen</button></div>
+          </div>
+          <div class="anzeigen-zahl"><span>248</span> <span>Anzeigen</span> <span>online</span></div>
+        </div>
+
+        <div id="viewad-description" class="karte">
+          <h2>Beschreibung</h2>
+          <p id="viewad-description-text">Komplettradsatz, sofort lieferbar.<br>Montage und Wuchten in unserer Werkstatt möglich.<br>Fragen gerne telefonisch unter 0621 1111111.</p>
+        </div>
+
+        <div id="viewad-imprint-section" class="karte">
+          <h2>Rechtliche Angaben</h2>
+          <p class="impressum">Muster Autoteile GmbH · Musterstraße 1 · 68159 Mannheim</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

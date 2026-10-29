@@ -39,7 +39,7 @@ async function fetchWithTimeout(url, options, timeoutMs) {
 }
 
 async function fetchImage(url) {
-  if (!/^https:\/\//.test(url)) throw new Error("Nur https-Bilder");
+  if (!/^https:\/\/|^http:\/\/kleinanzeigen\.localhost(:\d+)?\//.test(url)) throw new Error("Nur https-Bilder");
   const resp = await fetch(url, { credentials: "omit" });
   if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
   const blob = await resp.blob();

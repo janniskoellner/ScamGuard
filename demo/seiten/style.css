@@ -1,0 +1,83 @@
+/* Demo-Inserate: schlichtes Kleinanzeigen-ähnliches Layout. Inhalt bleibt links, damit das
+   ScamGuard-Panel (rechts eingeblendet) nichts verdeckt. */
+:root {
+  --gruen: #1d4b00;
+  --gruen-hell: #86b817;
+  --text: #1f2328;
+  --grau: #6a7178;
+  --linie: #e3e6e9;
+  --flaeche: #f4f5f6;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font: 15px/1.5 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: var(--flaeche);
+}
+a { color: #326916; text-decoration: none; }
+
+.kopf { background: var(--gruen); color: #fff; }
+.kopf-innen { max-width: 1240px; padding: 12px 24px; display: flex; align-items: center; gap: 24px; }
+.logo { font-weight: 800; font-size: 22px; letter-spacing: -0.5px; color: #fff; }
+.logo span { color: var(--gruen-hell); }
+.demo-hinweis {
+  font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;
+  background: rgba(255, 255, 255, 0.16); padding: 2px 8px; border-radius: 10px;
+}
+.suche {
+  flex: 1; max-width: 460px; background: #fff; color: var(--grau); border-radius: 6px;
+  padding: 8px 12px; font-size: 14px;
+}
+.kopf-links { margin-left: auto; display: flex; gap: 18px; font-size: 14px; }
+.kopf-links span { opacity: 0.9; }
+.knopf-anzeige { background: var(--gruen-hell); color: var(--gruen); font-weight: 700; padding: 7px 14px; border-radius: 6px; }
+
+.seite { max-width: 1240px; padding: 16px 24px 48px; }
+.inhalt { max-width: 760px; }
+
+#vap-brdcrmb { font-size: 13px; color: var(--grau); margin-bottom: 12px; }
+#vap-brdcrmb span[itemprop="itemListElement"]:not(:last-child)::after { content: "›"; margin: 0 6px; color: #aab; }
+#vap-brdcrmb a { color: var(--grau); }
+
+.karte { background: #fff; border: 1px solid var(--linie); border-radius: 10px; padding: 20px 24px; margin-bottom: 14px; }
+
+#viewad-product { padding: 6px; }
+.galerie-gross img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 6px; }
+.galerie-leiste { display: flex; gap: 8px; padding: 10px; }
+.galerie-leiste img { width: 84px; height: 63px; object-fit: cover; border-radius: 4px; border: 2px solid transparent; }
+.galerie-leiste img:first-child { border-color: var(--gruen-hell); }
+.galerie-element { margin: 0; }
+
+#viewad-title { font-size: 24px; line-height: 1.25; margin: 0 0 8px; }
+#viewad-price { font-size: 26px; margin: 0 0 6px; color: var(--gruen); }
+.details { display: flex; gap: 18px; color: var(--grau); font-size: 14px; }
+.versand { color: var(--grau); font-size: 14px; margin-top: 4px; }
+
+.anbieter { display: flex; gap: 16px; align-items: flex-start; }
+.avatar {
+  width: 52px; height: 52px; border-radius: 50%; background: #dfe7d4; color: var(--gruen);
+  display: grid; place-items: center; font-weight: 700; flex: none;
+}
+.anbieter-name { font-weight: 700; font-size: 16px; }
+.anbieter-zeilen { display: flex; flex-direction: column; gap: 2px; font-size: 14px; color: var(--grau); }
+.abzeichen { display: flex; gap: 8px; flex-wrap: wrap; margin: 4px 0; }
+.abzeichen a {
+  font-size: 12px; font-weight: 600; color: var(--gruen); background: #eef5e2;
+  border-radius: 12px; padding: 2px 10px;
+}
+.anbieter-aktionen { margin-left: auto; display: flex; flex-direction: column; gap: 8px; }
+.anbieter-aktionen button {
+  font: inherit; font-weight: 600; border-radius: 6px; padding: 8px 16px; cursor: pointer;
+  border: 1px solid var(--gruen); background: #fff; color: var(--gruen);
+}
+.anbieter-aktionen button.primaer { background: var(--gruen); color: #fff; }
+.anzeigen-zahl { font-size: 13px; color: var(--grau); }
+#viewad-bizteaser { font-size: 13px; color: var(--grau); margin-bottom: 10px; }
+#viewad-bizteaser span { font-weight: 600; color: var(--text); }
+
+#viewad-description h2, #viewad-imprint-section h2 { font-size: 18px; margin: 0 0 10px; }
+#viewad-description-text { margin: 0; }
+.impressum { font-size: 13px; color: var(--grau); }
+
+.index { max-width: 640px; margin: 40px auto; background: #fff; padding: 24px 32px; border-radius: 10px; }
